@@ -65,8 +65,7 @@
         </div>
     </div>
 
-    <script src="node_modules/vue/dist/vue.js"></script>
-    <script src="sample/data.js"></script>
-    <script src="app.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
