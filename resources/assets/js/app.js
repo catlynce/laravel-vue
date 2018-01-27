@@ -1,19 +1,21 @@
+import "core-js/fn/object/assign";
+import Vue from 'vue';
+import { populateAmenitiesAndPrices } from './helpers';
+
+let model = JSON.parse( window.laravuebnb_listing );
+model = populateAmenitiesAndPrices(model);
+
 var app = new Vue({
     el: '#app',
-    data: {
-        title: sample.title,
-        address: sample.address,
-        about: sample.about,
-        amenities: sample.amenities,
-        prices: sample.prices,
-        contracted: true,
-        modalOpen: false,
+    data: Object.assign( model, {
         headerImageStyle: {
-            'background-image': 'url(sample/header.jpg)'
-        }
-    },
+            'background-image': `url(${model.images[0]})`
+        },
+        contracted: true,
+        modalOpen: false
+    }),
     methods: {
-        escapeKeyListener: function( evt ) {
+        escapeKeyListener( evt ) {
             if ( evt.keyCode === 27 && this.modalOpen ) {
                 this.modalOpen = false;
             }
