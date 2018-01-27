@@ -20,13 +20,13 @@
         </div>
         <div class="container">
             <div class="heading">
-                <h1>{{ title }}</h1>
-                <p>{{ address }}</p>
+                <h1>@{{ title }}</h1>
+                <p>@{{ address }}</p>
             </div>
             <hr>
             <div class="about">
                 <h3>About this listing</h3>
-                <p :class="{contracted: contracted}">{{ about }}</p>
+                <p :class="{contracted: contracted}">@{{ about }}</p>
                 <button v-if="contracted" class="more" @click="contracted = false">+ More</button>
             </div>
             <div class="lists">
@@ -39,7 +39,7 @@
                         <div class="list-item" v-for="amenity in amenities">
                             <i class="fa fa-lg" :class="amenity.icon"></i>
                             <span>
-                            {{ amenity.title }}
+                            @{{ amenity.title }}
                             </span>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="content">
                         <div class="list-item" v-for="price in prices">
-                            {{ price.title }}: <strong>{{ price.value }}</strong>
+                            @{{ price.title }}: <strong>@{{ price.value }}</strong>
                         </div>
                     </div>
                 </div>
